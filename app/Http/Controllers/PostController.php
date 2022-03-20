@@ -14,7 +14,11 @@ class PostController extends Controller
      */
     public function index()
     {
-
+        // postsテーブルの全ての値を取得
+        // $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
+        $user = auth()->user();
+        return view ('post.index', compact('posts', 'user'));
     }
 
     /**
@@ -66,7 +70,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+
     }
 
     /**
