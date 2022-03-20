@@ -10,6 +10,11 @@
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
+
+            {{-- $errorsは連想配列になっており、下記は最初のエラーがimageに関するものではない＝件名、本文でエラーとなっている --}}
+            @if (empty($errors->first('image')))
+                <li>画像ファイルがあれば、再度、選択してください。</li>
+            @endif
         </ul>
     </div>
 @endif
