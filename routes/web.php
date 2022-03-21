@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 // post/create
-// post/show..など、PostControllerの７つのメソッドへのるーてぃんぐを設定する
-Route::resource('post', PostController::class);
+// post/show..など、PostControllerの７つのメソッドへのルーティングを設定する
+Route::resource('post', PostController::class)->middleware(['auth']);
+
+Route::post('post/comment/store', [CommentController::class, 'store'])->name('comment.store');
 
 require __DIR__.'/auth.php';
