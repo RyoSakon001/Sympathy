@@ -711,6 +711,9 @@ select {
 .h-8 {
   height: 2rem;
 }
+.h-12 {
+  height: 3rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -737,6 +740,9 @@ select {
 }
 .w-8 {
   width: 2rem;
+}
+.w-12 {
+  width: 3rem;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -1118,6 +1124,10 @@ select {
 .text-green-700 {
   --tw-text-opacity: 1;
   color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+.text-indigo-400 {
+  --tw-text-opacity: 1;
+  color: rgb(129 140 248 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
