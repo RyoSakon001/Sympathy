@@ -3,7 +3,9 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             投稿の個別表示
         </h2>
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
         <x-message :message="session('message')" />
+
     </x-slot>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,9 +14,12 @@
 
                 <div class="bg-white w-full  rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
                     <div class="mt-4">
-                        <h1 class="text-lg text-gray-700 font-semibold">
-                            {{ $post->title }}
-                        </h1><hr class="w-full">
+                        <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer">
+                        <a href="{{route('post.show', $post)}}">{{ $post->title }}</a>
+                        </h1>
+                        <hr class="w-full">
+                    </div>
+                    <div>
                         <p class="mt-4 text-gray-600 py-4">{{$post->body}}</p>
                         @if ($post->image)
                             <img src="{{asset('storage/images/'.$post->image)}}" class="mx-auto" style="max-height:300px;">
