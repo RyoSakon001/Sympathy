@@ -5,19 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Comment extends Model
 {
     use HasFactory;
-    // 入力してよい項目として$fillableを使用。入力不可項目は$guarded
-    protected $fillable = [
-        'title',
-        'body',
-        'user_id',
-        'image',
-    ];
 
+    protected $fillable = [
+        'post_id',
+        'user_id',
+        'body',
+    ];
     /**
-     * Get the user that owns the Post
+     * Get the user that owns the Comment
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -27,12 +25,12 @@ class Post extends Model
     }
 
     /**
-     * Get all of the comments for the Post
+     * Get the user that owns the Comment
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function comments()
+    public function post()
     {
-        return $this->hasMany(Comment::class);
+        return $this->belongsTo(Post::class);
     }
 }
