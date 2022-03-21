@@ -17,11 +17,19 @@
                                 <a href="{{route('post.show', $post)}}">{{$post->title}}</a>
                             </h1>
                             <hr class="w-full">
-                            <p class="mt-4 text-gray-600 py-4">{{$post->body}}</p>
+                            <p class="mt-4 text-gray-600 py-4">{{Str::limit($post->body, 100, '...')}}</p>
                             <div class="text-sm font-semibold flex flex-row-reverse">
                                 {{-- リレーションを活用 --}}
                                 <p>{{$post->user->name}}　{{$post->created_at->diffForHumans()}}</p>
                             </div>
+                            @if ($post->comments->count())
+                                <span class="badge">返信 {{$post->comments->count()}}件</span>
+                            @else
+                                <span>コメントはまだありません。</span>
+                            @endif
+                            <a href="{{route('post.show', $post)}}" style="color:white;">
+                                <x-button class="float-right">コメントする</x-button>
+                            </a>
                         </div>
                     </div>
                 </div>
