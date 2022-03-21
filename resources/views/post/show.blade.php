@@ -38,6 +38,25 @@
                             <p> {{ $post->user->name }} • {{$post->created_at->diffForHumans()}}</p>
                         </div>
                     </div>
+
+                    @foreach ($post->comments as $comment)
+                    <div class="bg-gray-50 w-full  rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500 mt-8">
+                        {{$comment->body}}
+                        <div class="text-sm font-semibold flex flex-row-reverse">
+                            <p> {{ $comment->user->name }} • {{$comment->created_at->diffForHumans()}}</p>
+                        </div>
+                    </div>
+                    @endforeach
+
+                    <div class="mt-4 mb-12">
+                        <form action="{{route('comment.store')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="post_id" value="{{$post->id}}">
+                            <textarea name="body" id="body" class="bg-white w-full px-4 py-4 mt-4 rounded-2xl shadow-lg hover:shadow-2xl transition duration-500" placeholder="コメントを入力してください" cols="30" rows="3">{{old('body')}}</textarea>
+                            <x-button class="float-right mr-4 mb-12">コメントする</x-button>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>
