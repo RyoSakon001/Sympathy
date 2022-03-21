@@ -21,11 +21,11 @@
                     </div>
 
                     <div class="flex justify-end mt-4">
-                        <a href="{{route('post.edit', $post)}}"><x-button class="bg-teal-700 float-right">編集</x-button></a>
+                        <a href="{{route('post.edit', $post)}}"><x-button class="bg-teal-600 float-right">編集</x-button></a>
                         <form method="post" action="{{route('post.destroy', $post)}}">
                             @csrf
                             @method('delete')
-                            <x-button class="bg-red-700 float-right ml-4" onClick="return confirm('本当に削除しますか？');">削除</x-button>
+                            <x-button class="bg-red-600 float-right ml-4" onClick="return confirm('本当に削除しますか？');">削除</x-button>
                         </form>
                     </div>
 
@@ -53,7 +53,7 @@
                             @csrf
                             <input type="hidden" name="post_id" value="{{$post->id}}">
                             <textarea name="body" id="body" class="bg-white w-full px-4 py-4 mt-4 rounded-2xl shadow-lg hover:shadow-2xl transition duration-500" placeholder="コメントを入力してください" cols="30" rows="3">{{old('body')}}</textarea>
-                            <x-button class="float-right mr-4 mb-12">コメントする</x-button>
+                            <x-button class="bg-blue-400 float-right mr-4 mb-12">コメントする</x-button>
                         </form>
                     </div>
 
