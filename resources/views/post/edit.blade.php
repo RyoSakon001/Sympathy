@@ -3,7 +3,13 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             投稿の編集
         </h2>
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
         <x-message :message="session('message')" />
+
+        {{-- $errorsは連想配列になっており、下記は最初のエラーがimageに関するものではない＝件名、本文でエラーとなっている --}}
+        @if (empty($errors->first('image')))
+            <li class="mt-3 list-disc list-inside text-sm text-red-600">画像ファイルがあれば、再度、選択してください。</li>
+        @endif
     </x-slot>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

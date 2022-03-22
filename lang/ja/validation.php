@@ -136,8 +136,10 @@ return [
 
     // 自分で設定可能
     'attributes' => [
+        'name'=>'名前',
         'title'=>'件名',
         'body'=>'本文',
+        'email'=>'メールアドレス',
         'image'=>'画像',
     ],
 ];
