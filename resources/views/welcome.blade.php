@@ -28,6 +28,11 @@
                 <a href="{{route('login')}}" class="btnset-login">ログイン</a>
                 <a href="{{ route('register') }}" class="btnset-register">登録</a>
               </div>
+
+              <div class="mt-4">
+                <a href="{{route('contact.create')}}" class="text-gray-500">お問い合わせ</a>
+              </div>
+
             </div>
             <!-- content - end -->
 
@@ -37,6 +42,8 @@
             </div>
             <!-- image - end -->
           </section>
+
+
         </div>
       </div>
 
