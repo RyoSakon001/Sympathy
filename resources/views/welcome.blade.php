@@ -30,7 +30,7 @@
               </div>
 
               <div class="mt-4">
-                <a href="{{route('contact.create')}}" class="text-gray-500">お問い合せ</a>
+                <a href="{{route('contact.create')}}" class="text-gray-500">お問い合わせ</a>
               </div>
 
             </div>
