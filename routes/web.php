@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('post/mypost', [PostController::class, 'mypost'])->name('post.mypost')->middleware(['auth']);
+Route::get('post/mycomment', [PostController::class, 'mycomment'])->name('post.mycomment')->middleware(['auth']);
 // create,showなど、PostControllerの７つのメソッドへのルーティングを設定する
 Route::resource('post', PostController::class)->middleware(['auth']);
 

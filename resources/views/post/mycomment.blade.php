@@ -1,17 +1,20 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            自分の投稿
+            コメントした投稿の一覧
         </h2>
         <x-message :message="session('message')" />
     </x-slot>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        @if (count($posts) === 0)
-            <p class="mt-4">自分の投稿はまだありません。</p>
+        @if (count($comments) === 0)
+            <p class="mt-4">自分のコメントはまだありません。</p>
         @else
-        @foreach ($posts as $post)
+        @foreach ($comments->unique('post_id') as $comment)
+        @php
+            $post = $comment->post;
+        @endphp
         <div class="mx-4 sm:p-8">
             <div class="mt-4">
 
