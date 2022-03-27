@@ -14,6 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(UserSeeder::class);
+        \App\Models\User::factory(19)->create(); // １人分はUserSeeder.phpにてゲストユーザーを作成
+        \App\Models\Post::factory(50)->create();
+        \App\Models\Comment::factory(300)->create();
+        \App\Models\Contact::factory(20)->create();
     }
 }
