@@ -21,6 +21,13 @@ class PostController extends Controller
         return view ('post.index', compact('posts', 'user'));
     }
 
+    public function mypost()
+    {
+        $user = auth()->user()->id;
+        $posts = Post::where('user_id', $user)->orderBy('created_at', 'desc')->get();
+        return view ('post.mypost', compact('posts'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

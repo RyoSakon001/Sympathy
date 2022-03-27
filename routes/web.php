@@ -20,8 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// post/create
-// post/show..など、PostControllerの７つのメソッドへのルーティングを設定する
+Route::get('post/mypost', [PostController::class, 'mypost'])->name('post.mypost')->middleware(['auth']);
+// create,showなど、PostControllerの７つのメソッドへのルーティングを設定する
 Route::resource('post', PostController::class)->middleware(['auth']);
 
 Route::post('post/comment/store', [CommentController::class, 'store'])->name('comment.store');
