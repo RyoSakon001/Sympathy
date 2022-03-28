@@ -28,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('admin', function($user) {
             // foreach: １ユーザーが複数のRoleを持っている場合があるため
             foreach ($user->roles as $role) {
-                if ($role === 'admin') {
+                if ($role->name === 'admin') {
                     return true;
                 }
             }

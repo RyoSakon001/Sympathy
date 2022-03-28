@@ -24,8 +24,9 @@
 
               <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random.</p>
               <p class="lg:w-4/5 text-blue-800 xl:text-lg leading-relaxed">※新規登録をしなくても、下記のユーザー情報でログインが可能です。</p>
-              <p class="lg:w-4/5 text-blue-800 xl:text-lg leading-relaxed">メールアドレス：sample@example.com</p>
-              <p class="lg:w-4/5 text-blue-800 xl:text-lg leading-relaxed mb-8 md:mb-12">パスワード：00000000</p>
+              <p class="lg:w-4/5 text-blue-800 xl:text-lg leading-relaxed">管理者 / 一般ユーザー</p>
+              <p class="lg:w-4/5 text-blue-800 xl:text-lg leading-relaxed">メールアドレス：admin@example.com / guest@example.com</p>
+              <p class="lg:w-4/5 text-blue-800 xl:text-lg leading-relaxed mb-8 md:mb-12">パスワード：00000000 / 00000000</p>
 
               <div class="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-2.5">
                 <a href="{{route('login')}}" class="btnset-login">ログイン</a>
