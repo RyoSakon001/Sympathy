@@ -43,6 +43,8 @@ class PostController extends Controller
      */
     public function create()
     {
+        // 投稿作成権限をadminのみ所持する場合に使用する
+        // Gate::authorize('admin');
         return view('post.create');
     }
 
