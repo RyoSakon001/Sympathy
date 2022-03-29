@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,8 @@ Route::post('post/comment/store', [CommentController::class, 'store'])->name('co
 Route::get('contact/create', [ContactController::class, 'create'])->name('contact.create');
 Route::post('contact/store', [ContactController::class, 'store'])->name('contact.store');
 
+// canでGateメソッドを用いることで、profile/indexを管理者用画面として使用。
+Route::middleware(['can:admin'])->group(function(){
+    Route::get('profile/index', [ProfileController::class, 'index'])->name('profile.index');
+});
 require __DIR__.'/auth.php';

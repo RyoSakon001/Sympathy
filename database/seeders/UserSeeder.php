@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
@@ -16,12 +16,20 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $data = array([
+            'name' => 'admin',
+            'email' => 'admin@example.com',
+            'email_verified_at' => now(),
+            'password' => '$2y$10$B2bx2vx/J05Dra.5wrEN1uVUShsHVUaw0TKmOep2knxzSX1kZZErG', // '00000000'をハッシュ化した数値
+            'remember_token' => Str::random(10),
+        ],[
             'name' => 'guest',
-            'email' => 'sample@example.com',
+            'email' => 'guest@example.com',
             'email_verified_at' => now(),
             'password' => '$2y$10$B2bx2vx/J05Dra.5wrEN1uVUShsHVUaw0TKmOep2knxzSX1kZZErG', // '00000000'をハッシュ化した数値
             'remember_token' => Str::random(10),
         ]);
+
+        DB::table('users')->insert($data);
     }
 }

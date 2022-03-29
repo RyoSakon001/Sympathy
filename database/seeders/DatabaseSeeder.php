@@ -14,8 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserSeeder::class);
-        \App\Models\User::factory(19)->create(); // １人分はUserSeeder.phpにてゲストユーザーを作成
+        $this->call([
+            UserSeeder::class,
+            RoleSeeder::class,
+            RoleUserSeeder::class,
+        ]);
+        \App\Models\User::factory(18)->create(); // ２人分（admin,guest）はUserSeeder.phpにてゲストユーザーを作成
         \App\Models\Post::factory(50)->create();
         \App\Models\Comment::factory(300)->create();
         \App\Models\Contact::factory(20)->create();
