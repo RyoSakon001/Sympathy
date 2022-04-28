@@ -18,7 +18,7 @@
           <section class="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
             <!-- content - start -->
             <div class="flex flex-col justify-center sm:text-center lg:text-left lg:py-12 xl:py-24">
-              <img src="{{asset('storage/incredients/mail.jpg')}}" class="mx-auto mb-8" style="max-height:300px;">
+              <img src="{{asset('logo/mail.jpg')}}" class="mx-auto mb-8" style="max-height:300px;">
 
               <h1 class="text-indigo-500 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">想いを伝えたい人はいますか？</h1>
 
