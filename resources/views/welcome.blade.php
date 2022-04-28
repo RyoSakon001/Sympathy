@@ -17,12 +17,16 @@
 
           <section class="flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
             <!-- content - start -->
-            <div class="xl:w-5/12 flex flex-col justify-center sm:text-center lg:text-left lg:py-12 xl:py-24">
-              <p class="text-indigo-500 md:text-lg xl:text-xl font-semibold mb-4 md:mb-6">Welcome to kurauchi's Website!</p>
+            <div class="flex flex-col justify-center sm:text-center lg:text-left lg:py-12 xl:py-24">
+              <img src="{{asset('storage/incredients/mail.jpg')}}" class="mx-auto mb-8" style="max-height:300px;">
 
-              <h1 class="text-black-800 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">Revolutionary way to build the web</h1>
+              <h1 class="text-indigo-500 text-4xl sm:text-5xl md:text-6xl font-bold mb-8 md:mb-12">想いを伝えたい人はいますか？</h1>
 
-              <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random.</p>
+              <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">Sympathyは、人に想いを伝えるための場所です。とは言っても、伝える相手は、決して「いま」あなたが好意を抱いている相手や、「いま」一緒に暮らしている家族ではありません。<span class="font-bold">その方々には、ぜひとも直接、その想いを伝えてあげてください。</span></p>
+              <p class="lg:w-4/5 font-bold text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">Sympathyが想定している「伝える相手」は、あなたの「過去」にゆかりのある方々です。</p>
+              <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">人は、自分が成長した時に、初めて自身の至らなさに気がつくことがあります。しかし、そのような場がいつでも用意されているわけではありません。</p>
+              <p class="lg:w-4/5 text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">自分がそうしたくても、相手が同じ気持ちでいるとは限らないからです。</p>
+              <p class="lg:w-4/5 font-bold text-gray-500 xl:text-lg leading-relaxed mb-8 md:mb-12">伝えたいけど、伝えられない。そんな、相手への言葉が、実際に伝わるその日まで、Sympathyは、その言葉をお預かりします。</p>
               <p class="lg:w-4/5 text-blue-800 xl:text-lg leading-relaxed">※新規登録をしなくても、下記のユーザー情報でログインが可能です。</p>
               <p class="lg:w-4/5 text-blue-800 xl:text-lg leading-relaxed">管理者 / 一般ユーザー</p>
               <p class="lg:w-4/5 text-blue-800 xl:text-lg leading-relaxed">メールアドレス：admin@example.com / guest@example.com</p>
@@ -40,11 +44,6 @@
             </div>
             <!-- content - end -->
 
-            <!-- image - start -->
-            <div class="xl:w-5/12 h-48 lg:h-auto bg-gray-100 overflow-hidden shadow-lg rounded-lg">
-              <img src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Fakurian Design" class="w-full h-full object-cover object-center" />
-            </div>
-            <!-- image - end -->
           </section>
 
 
